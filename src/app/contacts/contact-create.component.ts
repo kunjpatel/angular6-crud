@@ -25,7 +25,7 @@ export class ContactCreateComponent {
     // get contacts list from localStorage
     this.contacts = JSON.parse(localStorage.getItem('contacts')) || [];
     // generate dynamic contactId
-    this.model.contactId = this.contacts.length == 0 ? 1 : this.contacts.length + 1;
+    this.model.contactId = this.contacts.length == 0 ? 6 : this.contacts.length + 5;
     // create new contact
     this.contacts.push(this.model);
     // set updated contacts list in localStorage

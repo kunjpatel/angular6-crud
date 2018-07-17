@@ -11,6 +11,7 @@ import { ContactService } from './contact.service';
 export class ContactDetailComponent implements OnInit {
   pageTitle: string = 'Contact Detail';
   errorMessage: string;
+  contacts: IContact[] = [];
   contact: IContact; 
 
   constructor(private _route: ActivatedRoute,
@@ -27,9 +28,8 @@ export class ContactDetailComponent implements OnInit {
   }
 
   getContact(id: number) {
-    this._contactService.getContact(id).subscribe(
-      contact => this.contact = contact,
-      error => this.errorMessage = <any>error);
+    this.contacts = JSON.parse(localStorage.getItem('contacts'));
+    this.contact = this.contacts.find(p => p.contactId === id);
   }
 
   onBack(): void {
