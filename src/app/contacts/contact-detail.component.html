@@ -1,0 +1,38 @@
+<div class='panel panel-primary' *ngIf='contact'>
+    <div class='panel-heading'>
+        {{pageTitle + ': ' + contact.firstName + ' ' + contact.lastName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>First Name:</div>
+                    <div class='col-md-6'>{{contact.firstName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Last Name:</div>
+                    <div class='col-md-6'>{{contact.lastName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Email:</div>
+                    <div class='col-md-6'>{{contact.email}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Phone Number:</div>
+                    <div class='col-md-6'>{{contact.phoneNumber}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Status:</div>
+                    <div class='col-md-6'>{{ contact.status == "yes"? "Active" : "Inactive"}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>

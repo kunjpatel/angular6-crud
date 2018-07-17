@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <input type="hidden" name="id" value="{{count}}"> 
+
+                <label for="firstName">First Name</label>
+                
+                <input type="text" class="form-control" name="firstName" pattern="[a-zA-Z ]*" [(ngModel)]="model.firstName" minlength="2" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                
+                <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                    <div *ngIf="firstName.errors.required">First Name is required</div>
+                    <div *ngIf="firstName.errors.minlength">First Name must be at least 2 characters</div>
+                    <div *ngIf="firstName.errors?.pattern">First Name should contain only Alphabets</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                
+                <input type="text" class="form-control" name="lastName" pattern="[a-zA-Z ]*" [(ngModel)]="model.lastName" minlength="2" #lastName="ngModel" [ngClass]="{ 'is-invalid ': f.submitted && lastName.invalid }" required />
+                
+                <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                    <div *ngIf="lastName.errors.required">Last Name is required</div>
+                    <div *ngIf="lastName.errors.minlength">Last Name must be at least 2 characters</div>
+                    <div *ngIf="lastName.errors?.pattern">Last Name should contain only Alphabets</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                
+                <input type="text" class="form-control" name="email" [(ngModel)]="model.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required />
+                
+                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                    <div *ngIf="email.errors.required">Email is required</div>
+                    <div *ngIf="email.errors?.pattern">Email must be a valid email address</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                
+                <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" pattern="[0-9]+" #phoneNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phoneNumber.invalid }" required minlength="6" maxlength="12" /> 
+                
+                <div *ngIf="f.submitted && phoneNumber.invalid" class="invalid-feedback">
+                    <div *ngIf="phoneNumber.errors.required">Phone Number is required</div>
+                    <div *ngIf="phoneNumber.errors.minlength">Phone Number must be at least 6 characters</div>
+                    <div *ngIf="phoneNumber.errors.maxlength">Phone Number must be not more than 12 characters</div>
+                    <div *ngIf="phoneNumber.errors.pattern">Phone number should contain only valid Digits</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label><br>
+                
+                <label><input type="radio" class="form-control" name="status" value="Active" #status="ngModel" [(ngModel)]="model.status" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }" required >Active</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label><input type="radio" class="form-control" name="status" value="Inactive" #status="ngModel" [(ngModel)]="model.status" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }"  required>Inactive</label>
+
+                <div *ngIf="f.submitted && status.invalid" class="invalid-feedback">
+                    <div *ngIf="status.errors.required">Please select status</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Create contact</button>
+            </div>
+        </form>
+    </div>
+</div>

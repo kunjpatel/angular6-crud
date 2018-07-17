@@ -1,0 +1,42 @@
+[
+    {
+        "contactId": 1,
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": "john.smith@gmail.com",
+        "phoneNumber": 4785454125,
+        "status": "Active"
+    },
+    {
+       "contactId": 2,
+        "firstName": "James",
+        "lastName": "Martin",
+        "email": "james.martin@hotmail.com",
+        "phoneNumber": 4854872544,
+        "status": "Active"
+    },
+    {
+       "contactId": 3,
+        "firstName": "John",
+        "lastName": "Carter",
+        "email": "john.carter@yahoo.com",
+        "phoneNumber": 4514557845,
+        "status": "Inactive"
+    },
+    {
+        "contactId": 4,
+        "firstName": "Kelly",
+        "lastName": "Smith",
+        "email": "kelly.smith@gmail.com",
+        "phoneNumber": 4787544475,
+        "status": "Active"
+    },
+    {
+        "contactId": 5,
+        "firstName": "Will",
+        "lastName": "Martin",
+        "email": "will.martin@hotmail.com",
+        "phoneNumber": 4571547854,
+        "status": "Inactive"
+    }
+]
